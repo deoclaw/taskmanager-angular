@@ -10,6 +10,7 @@ import { Task } from './task';
 export class TaskService {
   private url = 'http://localhost:3500';
   tasks$ = signal<Task[]>([]);
+  task$ = signal<Task>({} as Task);
 
   constructor(private httpClient: HttpClient) {}
 
@@ -24,6 +25,15 @@ export class TaskService {
     return this.tasks$();
   }
 
+  //need this for editing tasks
+  //need to also make route for this
+  getTask(id: string) {
+    this.httpClient.get<Task>(`${this.url}/tasks/${id}`).subscribe((task) => {
+      this.task$.set(task);
+      return this.task$();
+    });
+  }
+
   //parameter clled 'task' of type Task (interface)
   createTask(task: Task) {
     return this.httpClient.post(`${this.url}/tasks`, task, {
@@ -33,13 +43,13 @@ export class TaskService {
 
   //right now my api doesn't pass params. maybe it should?
   updateTask(id: string, task: Task) {
-    return this.httpClient.put(`${this.url}/tasks`, task, {
+    return this.httpClient.patch(`${this.url}/tasks/${id}`, task, {
       responseType: 'text',
     });
   }
 
   deleteTask(id: string) {
-    return this.httpClient.delete(`${this.url}/tasks`, {
+    return this.httpClient.delete(`${this.url}/tasks/${id}`, {
       responseType: 'text',
     });
   }

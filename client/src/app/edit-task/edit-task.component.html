@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Edit a Task</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-task-form
+      [initialState]="task()"
+      (formSubmitted)="editTask($event)"
+    ></app-task-form>
+  </mat-card-content>
+</mat-card>

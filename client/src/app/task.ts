@@ -1,6 +1,7 @@
 export interface Task {
-  title: String;
-  text: String;
-  priority: String;
-  completed: Boolean;
+  title: string;
+  text: string;
+  priority: string;
+  completed?: Boolean;
+  _id?: string;
 }

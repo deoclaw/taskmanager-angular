@@ -1,1 +1,37 @@
-<p>task-form works!</p>
+<form
+  class="task-form"
+  autocomplete="off"
+  [formGroup]="taskForm"
+  (submit)="submitForm()"
+>
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Title" formControlName="title" required />
+    @if (title.invalid) {
+    <mat-error>Task title must be at least 3 characters long.</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="Text" formControlName="text" required />
+    @if (text.invalid) {
+    <mat-error>Task text must be at least 5 characters long.</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-radio-group formControlName="priority" aria-label="Select an option">
+    <mat-radio-button name="level" value="low" required>Low</mat-radio-button>
+    <mat-radio-button name="level" value="medium">Medium</mat-radio-button>
+    <mat-radio-button name="level" value="high">High</mat-radio-button>
+  </mat-radio-group>
+  <br />
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="taskForm.invalid"
+  >
+    Add
+  </button>
+</form>
