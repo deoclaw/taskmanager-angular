@@ -27,7 +27,7 @@
             color="warn"
             (click)="deleteTask(element._id || '')"
           >
-            Delete
+            Complete
           </button>
         </td>
       </ng-container>
@@ -37,7 +37,12 @@
     </table>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary" [routerLink]="['new']">
+    <button
+      class="add-btn"
+      mat-raised-button
+      color="outline"
+      [routerLink]="['new']"
+    >
       Add a New Task
     </button>
   </mat-card-actions>

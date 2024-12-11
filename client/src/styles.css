@@ -10,3 +10,18 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+mat-card {
+  width: 95vw;
+  margin: 0 auto;
+}
+
+mat-card-title {
+  color: white;
+  padding-bottom: 0.5rem;
+}
+
+.add-btn:hover {
+  color: var(--mat-sys-surface) !important;
+  background-color: var(--mat-sys-primary) !important;
+}

@@ -1,0 +1,86 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>About This App</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <article>
+      <h1>Project Report</h1>
+      <p>
+        This is a task management app built using the MEAN stack (MongoDB,
+        Express, Angular, and Node.js) for a class project
+      </p>
+      <p>
+        This project report contains an overview of the app and its features,
+        challenges faced, and future improvements.
+      </p>
+      <h2>Overview</h2>
+      <p>Features include:</p>
+      <ul>
+        <li>Basic CRUD operations to a cloud-based MongoDB collection</li>
+        <ul>
+          <li>Create a new task</li>
+          <li>Read all tasks</li>
+          <li>Updated (edit) a task</li>
+          <li>Delete (complete) a task</li>
+        </ul>
+        <li>RESTful API</li>
+        <li>Routing between pages</li>
+        <li>Integration of Angular Material CDK</li>
+        <li>An About page</li>
+      </ul>
+      <p>
+        The front end code can be found
+        <a href="https://github.com/deoclaw/taskmanager-angular"
+          >this repository</a
+        >
+        and the back end code can be found at
+        <a href="https://github.com/deoclaw/taskmanager-api">this repository</a>
+      </p>
+      <h2>Challenges</h2>
+      <p>
+        There were a number of challenges with this app. The backend went pretty
+        smoothly; however, Angular was so different than previous front-end
+        frameworks I had been introduced to and the documentation was not very
+        user friendly. I found videos made by MongoDB of all places that went
+        over Angular concepts, which helped.
+      </p>
+      <p>
+        One of the biggest challenges was security. Currently, the server only
+        runs on the local machine rather than being accessible publicly. This is
+        because I was unable to adequately integrate authentication and
+        authorization. While I found a tutorial on JWT integration for
+        MERN-stack apps by David Gray who taught Backend Development I, I found
+        myself unsure of how to integrate it well in Angular. Rather than
+        potentially introduce a huge security hole, I have opted to keep this a
+        local deployment instead.
+      </p>
+      <p>
+        Another major challenge was using Angular Material. Angular's
+        documentation does not readily give users information about the
+        different variables for color used. Eventually I found
+        <a href="https://material.angular.io/guide/system-variables"
+          >the guide to system variables</a
+        >
+        which had a link to the Material color system which had, nestled in it,
+        the guide to
+        <a href="https://m3.material.io/styles/color/static/baseline"
+          >all the color variable names</a
+        >; however, for purpoting user friendly design the documentation is
+        anything but.
+      </p>
+      <h2>Future Improvements</h2>
+      <p>
+        Future improvements to this project would first be to integrate a user
+        system so users can link their tasks to their username. This would also
+        necessitate a user authentication and authorization system so that this
+        can be served publicly on a platform like render.
+      </p>
+      <p>
+        Another improvement would be getting the form validator to work and
+        allow forward slashes for dates. Currently, it allows only some regex
+        but not all (the goal being to keep anyone from submitting untrusted
+        code.)
+      </p>
+    </article>
+  </mat-card-content>
+</mat-card>

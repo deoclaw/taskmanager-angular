@@ -1,6 +1,7 @@
 table {
   width: 100%;
 }
+
 button:first-of-type {
   margin-right: 1rem;
 }
@@ -8,9 +9,10 @@ button:first-of-type {
 mat-card {
   width: 95vw;
   margin: 0 auto;
+  padding: 1rem;
 }
 
 mat-card-title {
-  color: white;
+  color: var(--mat-sys-primary);
   padding-bottom: 0.5rem;
 }

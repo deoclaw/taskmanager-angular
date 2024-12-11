@@ -20,6 +20,7 @@ import { Task } from '../task';
 })
 export class TaskFormComponent {
   initialState = input<Task>();
+  //re=/^[a-zA-Z0-9 '.,]*$/g;
 
   @Output()
   formValuesChanged = new EventEmitter<Task>();
@@ -28,9 +29,23 @@ export class TaskFormComponent {
   formSubmitted = new EventEmitter<Task>();
 
   taskForm = this.formBuilder.group({
-    title: ['', [Validators.required, Validators.minLength(3)]],
-    text: ['', [Validators.required, Validators.minLength(5)]],
-    priority: ['junior', [Validators.required]],
+    title: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('^[a-zA-Z0-9 ,]*$'),
+      ],
+    ],
+    text: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.pattern('^[a-zA-Z0-9 ,:.-]*$'),
+      ],
+    ],
+    priority: ['low', [Validators.required]],
   });
 
   constructor(private formBuilder: FormBuilder) {

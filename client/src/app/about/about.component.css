@@ -1,0 +1,30 @@
+mat-card {
+  width: 75vw;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+mat-card-content {
+  color: var(--mat-sys-on-surface);
+}
+
+mat-card-content article {
+  padding: 0 2rem 2rem 0;
+}
+
+mat-card-title {
+  color: var(--mat-sys-primary);
+}
+li {
+  padding: 0.25rem;
+}
+
+a,
+a:visited {
+  color: var(--mat-sys-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--mat-sys-tertiary);
+}

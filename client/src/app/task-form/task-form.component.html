@@ -8,7 +8,9 @@
     <mat-label>Title</mat-label>
     <input matInput placeholder="Title" formControlName="title" required />
     @if (title.invalid) {
-    <mat-error>Task title must be at least 3 characters long.</mat-error>
+    <mat-error
+      >Task title must be at least 3 alphanumeric characters long.</mat-error
+    >
     }
   </mat-form-field>
 
@@ -16,7 +18,9 @@
     <mat-label>Description</mat-label>
     <input matInput placeholder="Text" formControlName="text" required />
     @if (text.invalid) {
-    <mat-error>Task text must be at least 5 characters long.</mat-error>
+    <mat-error
+      >Task text must be at least 5 alphanumeric characters long.</mat-error
+    >
     }
   </mat-form-field>
 
@@ -27,6 +31,7 @@
   </mat-radio-group>
   <br />
   <button
+    class="add-btn"
     mat-raised-button
     color="primary"
     type="submit"

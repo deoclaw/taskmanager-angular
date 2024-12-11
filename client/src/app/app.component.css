@@ -3,3 +3,21 @@ main {
   justify-content: center;
   padding: 2rem 4rem;
 }
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+mat-toolbar a {
+  padding: 2rem 4rem;
+  text-decoration: none;
+}
+
+a,
+a:visited {
+  color: var(--mat-sys-tertiary);
+}
+
+a:hover {
+  color: var(--mat-sys-primary);
+}
